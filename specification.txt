@@ -1,0 +1,43 @@
+Functional Requirements
+- Add/Edit plot group & tree
+- Add/Edit tree treatment according to plot group
+- Add/Edit tree conditions and growth info
+- Add/Delete photos
+- Admin visibility
+
+Non-functional Requirements
+- Push updates to backend when network returns
+- Frontend must work without network availability
+
+
+Data Schema
+
+Tree Table
+- tree_id: long (composite PK with plot_id)
+- plot_id: long (FK)
+- height: int
+- diameter: float
+- created_at: timestamp
+- updated_at: timestamp
+
+Plot Table
+- plot_id: long (PK)
+
+Treatment Table
+- treatment_id: long (PK)
+- tree_id: long (FK)
+- treatment_type: long (FK)
+- remarks: string
+- date: timestamp
+- created_at: timestamp
+- updated_at: timestamp
+
+Treatment Type Table
+- id: long (PK)
+- type: string
+
+Fruiting Table
+- durian_id: long (PK)
+- tree_id: long (FK)
+- created_at: timestamp
+- updated_at: timestamp
