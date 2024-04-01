@@ -22,6 +22,7 @@ Tree Table
 
 Plot Table
 - plot_id: long (PK)
+- info: string
 
 Treatment Table
 - treatment_id: long (PK)
