@@ -23,6 +23,7 @@ Tree Table
 Plot Table
 - plot_id: long (PK)
 - info: string
+- created_at: timestamp
 
 Treatment Table
 - treatment_id: long (PK)

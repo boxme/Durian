@@ -71,7 +71,7 @@ func (l *Logger) errorResponse(
 	w http.ResponseWriter, r *http.Request, status int, message interface{}) {
 	env := envelope{"error": message}
 
-	err := encode(w, r, status, env)
+	err := Encode(w, r, status, env)
 	if err != nil {
 		l.logError(r, err)
 		w.WriteHeader(http.StatusInternalServerError)
