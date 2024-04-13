@@ -43,3 +43,16 @@ Fruiting Table
 - tree_id: long (FK)
 - created_at: timestamp
 - updated_at: timestamp
+
+User Table
+- userId: long (PK)
+- access_type: int (FK)
+- name: string
+- hashed_password: string
+- country_code: int
+- contact: string
+- token: string
+
+Access Type Table:
+- id: int (PK)
+- type: int
