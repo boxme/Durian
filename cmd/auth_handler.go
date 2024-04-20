@@ -12,11 +12,11 @@ import (
 
 type AuthHandler struct {
 	Db      *pgxpool.Pool
-	logger  Logger
+	logger  *Logger
 	service AuthService
 }
 
-func CreateAuthHandler(db *pgxpool.Pool, logger Logger) AuthHandler {
+func CreateAuthHandler(db *pgxpool.Pool, logger *Logger) AuthHandler {
 	authService := CreateAuthService(db)
 	return AuthHandler{
 		Db:      db,

@@ -18,7 +18,7 @@ func CreateServer(
 	logger *Logger) (*Server, error) {
 
 	mux := http.NewServeMux()
-	addRoutes(mux, logger)
+	addRoutes(mux, db, logger)
 
 	var handler http.Handler = mux
 
@@ -26,8 +26,4 @@ func CreateServer(
 		Mux: handler,
 		Db:  db,
 	}, nil
-}
-
-func addRoutes(mux *http.ServeMux, logger *Logger) {
-	mux.Handle("/", http.NotFoundHandler())
 }
