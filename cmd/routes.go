@@ -11,4 +11,7 @@ func addRoutes(mux *http.ServeMux, db *pgxpool.Pool, logger *Logger) {
 
 	authHandler := CreateAuthHandler(db, logger)
 	mux.Handle("/login", authHandler.handleLogin())
+
+	plotHandler := CreatePlotHandler(db, logger)
+	mux.Handle("/addPlot/", plotHandler.handleAddPlot())
 }
